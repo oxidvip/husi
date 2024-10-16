@@ -6,12 +6,12 @@
         <item name="actionModeCloseDrawable">@drawable/ic_navigation_close</item>
         <item name="colorButtonNormal">?colorAccent</item>
         <item name="android:navigationBarColor">?colorPrimaryDark</item>
-        <item name="colorPrimary">@color/material_light_black
-        <item name="colorPrimaryDark">@color/material_light_black
-        <item name="colorAccent">@color/material_light_black
+        <item name="colorPrimary">@color/material_light_black</item>
+        <item name="colorPrimaryDark">@color/material_light_black</item>
+        <item name="colorAccent">@color/material_light_black</item>
 
-        <item name="colorMaterial100">@color/material_light_black
-        <item name="colorMaterial300">@color/material_light_black
+        <item name="colorMaterial100">@color/material_light_black</item>
+        <item name="colorMaterial300">@color/material_light_black</item>
 
         <item name="accentOrTextSecondary">?colorAccent</item>
         <item name="accentOrTextPrimary">?colorAccent</item>
