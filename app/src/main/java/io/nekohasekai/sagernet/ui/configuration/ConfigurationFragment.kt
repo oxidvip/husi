@@ -1799,5 +1799,5 @@ class ConfigurationFragment @JvmOverloads constructor(
                 }
             }
         }
-    }
+        
 }
