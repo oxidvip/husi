@@ -130,8 +130,3 @@ jobs:
           mv ghr*linux_amd64/ghr .
           ./ghr -delete -prerelease -t "${{ github.token }}" -n "${{ github.ref }}" "${{ github
           .ref }}" ./artifacts/
-      - uses: svenstaro/upload-release-action@v2
-        with:
-          tag: ${{ github.event.inputs.release_tag }}
-          make_latest: true
-        
