@@ -42,7 +42,7 @@ import (
 )
 
 func defaultDNS() (net.Conn, error) {
-    return net.Dial(N.NetworkUDP, "8.8.8.8:53") // Google DNS
+    return net.Dial(N.NetworkUDP, "1.1.1.1:53") // Cloudflare DNS
 }
 ```
 
@@ -57,8 +57,8 @@ import (
 
 
 func defaultDNS() (net.Conn, error) {
-    const googleDNS = "8.8.8.8:53"
-    return net.Dial(N.NetworkUDP, googleDNS)
+    const googleDNS = "1.1.1.1:53"
+    return net.Dial(N.NetworkUDP, cloudflareDNS)
 }
 ```
 
