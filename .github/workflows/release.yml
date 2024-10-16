@@ -132,7 +132,6 @@ jobs:
           .ref }}" ./artifacts/
       - uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.release_tag }}
           make_latest: true
         
