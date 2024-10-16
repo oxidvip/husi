@@ -43,20 +43,11 @@
                             android:id="@+id/action_new_trojan"
                             android:title="@string/action_trojan" />
                     <item
-                            android:id="@+id/action_new_mieru"
-                            android:title="@string/action_mieru" />
-                    <item
-                            android:id="@+id/action_new_naive"
-                            android:title="@string/action_naive" />
-                    <item
                             android:id="@+id/action_new_hysteria"
                             android:title="@string/action_hysteria" />
                     <item
                             android:id="@+id/action_new_tuic"
                             android:title="@string/action_tuic" />
-                    <item
-                            android:id="@+id/action_new_juicity"
-                            android:title="@string/action_juicity" />
                     <item
                         android:id="@+id/action_new_direct"
                         android:title="@string/action_direct" />
