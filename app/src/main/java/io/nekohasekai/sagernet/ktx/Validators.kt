@@ -24,7 +24,6 @@ import io.nekohasekai.sagernet.R
 import io.nekohasekai.sagernet.fmt.AbstractBean
 import io.nekohasekai.sagernet.fmt.http.HttpBean
 import io.nekohasekai.sagernet.fmt.hysteria.HysteriaBean
-import io.nekohasekai.sagernet.fmt.juicity.JuicityBean
 import io.nekohasekai.sagernet.fmt.shadowsocks.ShadowsocksBean
 import io.nekohasekai.sagernet.fmt.socks.SOCKSBean
 import io.nekohasekai.sagernet.fmt.trojan.TrojanBean
@@ -88,12 +87,7 @@ fun AbstractBean.isInsecure(): ValidateResult {
             if (allowInsecure) return ResultInsecure(R.raw.insecure)
             if (version < 3) return ResultDeprecated(R.raw.shadowtls_legacy)
         }
-
-        is JuicityBean -> {
-            if (allowInsecure) return ResultInsecure(R.raw.insecure)
-        }
     }
 
     return ResultSecure
 }
-
