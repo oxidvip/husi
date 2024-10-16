@@ -11,12 +11,6 @@ import io.nekohasekai.sagernet.fmt.ConfigBuildResult
 import io.nekohasekai.sagernet.fmt.buildConfig
 import io.nekohasekai.sagernet.fmt.hysteria.HysteriaBean
 import io.nekohasekai.sagernet.fmt.hysteria.buildHysteriaConfig
-import io.nekohasekai.sagernet.fmt.juicity.JuicityBean
-import io.nekohasekai.sagernet.fmt.juicity.buildJuicityConfig
-import io.nekohasekai.sagernet.fmt.mieru.MieruBean
-import io.nekohasekai.sagernet.fmt.mieru.buildMieruConfig
-import io.nekohasekai.sagernet.fmt.naive.NaiveBean
-import io.nekohasekai.sagernet.fmt.naive.buildNaiveConfig
 import io.nekohasekai.sagernet.ktx.Logs
 import io.nekohasekai.sagernet.ktx.app
 import io.nekohasekai.sagernet.plugin.PluginManager
@@ -62,16 +56,6 @@ abstract class BoxInstance(
             chain.entries.forEach { (port, profile) ->
                 when (val bean = profile.requireBean()) {
 
-                    is MieruBean -> {
-                        initPlugin("mieru-plugin")
-                        pluginConfigs[port] = profile.type to bean.buildMieruConfig(port)
-                    }
-
-                    is NaiveBean -> {
-                        initPlugin("naive-plugin")
-                        pluginConfigs[port] = profile.type to bean.buildNaiveConfig(port)
-                    }
-
                     is HysteriaBean -> {
                         when (bean.protocolVersion) {
                             1 -> initPlugin("hysteria-plugin")
@@ -85,11 +69,6 @@ abstract class BoxInstance(
                                 cacheFiles.add(this)
                             }
                         }
-                    }
-
-                    is JuicityBean -> {
-                        initPlugin("juicity-plugin")
-                        pluginConfigs[port] = profile.type to bean.buildJuicityConfig(port)
                     }
                 }
             }
@@ -110,45 +89,6 @@ abstract class BoxInstance(
                 when {
                     externalInstances.containsKey(port) -> {
                         externalInstances[port]!!.launch()
-                    }
-
-                    bean is MieruBean -> {
-                        val configFile = File(
-                            cacheDir, "mieru_" + SystemClock.elapsedRealtime() + ".json"
-                        )
-
-                        configFile.parentFile?.mkdirs()
-                        configFile.writeText(config)
-                        cacheFiles.add(configFile)
-
-                        val envMap = mutableMapOf(
-                            "MIERU_CONFIG_JSON_FILE" to configFile.absolutePath,
-                            "MIERU_PROTECT_PATH" to "protect_path",
-                        )
-
-                        val commands = mutableListOf(
-                            initPlugin("mieru-plugin").path, "run",
-                        )
-
-                        processes.start(commands, envMap)
-                    }
-
-                    bean is NaiveBean -> {
-                        val configFile = File(
-                            cacheDir, "naive_" + SystemClock.elapsedRealtime() + ".json"
-                        )
-
-                        configFile.parentFile?.mkdirs()
-                        configFile.writeText(config)
-                        cacheFiles.add(configFile)
-
-                        val envMap = mutableMapOf<String, String>()
-
-                        val commands = mutableListOf(
-                            initPlugin("naive-plugin").path, configFile.absolutePath
-                        )
-
-                        processes.start(commands, envMap)
                     }
 
                     bean is HysteriaBean -> {
@@ -186,29 +126,6 @@ abstract class BoxInstance(
 
                         processes.start(commands, envMap)
                     }
-
-                    bean is JuicityBean -> {
-                        val configFile = File(
-                            cacheDir, "juicity_" + SystemClock.elapsedRealtime() + ".json"
-                        )
-
-                        configFile.parentFile?.mkdirs()
-                        configFile.writeText(config)
-                        cacheFiles.add(configFile)
-
-                        val envMap = mutableMapOf(
-                            "QUIC_GO_DISABLE_GSO" to "1"
-                        )
-
-                        val commands = mutableListOf(
-                            initPlugin("juicity-plugin").path,
-                            "run",
-                            "-c", configFile.absolutePath,
-                        )
-
-                        processes.start(commands, envMap)
-                    }
-
                 }
             }
         }
