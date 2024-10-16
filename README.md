@@ -86,9 +86,6 @@ make plugin PLUGIN=<Plugin name>
 Plugin name list:
 
 * `hysteria2`
-* `juicity`
-* `naive`
-* `mieru`
 
 ## 📖 License
 
