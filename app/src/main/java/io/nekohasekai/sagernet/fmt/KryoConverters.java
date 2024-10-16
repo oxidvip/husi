@@ -9,9 +9,6 @@ import io.nekohasekai.sagernet.fmt.direct.DirectBean;
 import io.nekohasekai.sagernet.fmt.http.HttpBean;
 import io.nekohasekai.sagernet.fmt.hysteria.HysteriaBean;
 import io.nekohasekai.sagernet.fmt.internal.ChainBean;
-import io.nekohasekai.sagernet.fmt.juicity.JuicityBean;
-import io.nekohasekai.sagernet.fmt.mieru.MieruBean;
-import io.nekohasekai.sagernet.fmt.naive.NaiveBean;
 import io.nekohasekai.sagernet.fmt.shadowsocks.ShadowsocksBean;
 import io.nekohasekai.sagernet.fmt.socks.SOCKSBean;
 import io.nekohasekai.sagernet.fmt.ssh.SSHBean;
@@ -91,19 +88,7 @@ public class KryoConverters {
         if (JavaUtil.isEmpty(bytes)) return null;
         return deserialize(new TrojanBean(), bytes);
     }
-
-    @TypeConverter
-    public static MieruBean mieruDeserialize(byte[] bytes) {
-        if (JavaUtil.isEmpty(bytes)) return null;
-        return deserialize(new MieruBean(), bytes);
-    }
-
-    @TypeConverter
-    public static NaiveBean naiveDeserialize(byte[] bytes) {
-        if (JavaUtil.isEmpty(bytes)) return null;
-        return deserialize(new NaiveBean(), bytes);
-    }
-
+    
     @TypeConverter
     public static HysteriaBean hysteriaDeserialize(byte[] bytes) {
         if (JavaUtil.isEmpty(bytes)) return null;
@@ -126,12 +111,6 @@ public class KryoConverters {
     public static TuicBean tuicDeserialize(byte[] bytes) {
         if (JavaUtil.isEmpty(bytes)) return null;
         return deserialize(new TuicBean(), bytes);
-    }
-
-    @TypeConverter
-    public static JuicityBean juicityDeserialize(byte[] bytes) {
-        if (JavaUtil.isEmpty(bytes)) return null;
-        return deserialize(new JuicityBean(), bytes);
     }
 
     @TypeConverter
