@@ -1649,7 +1649,13 @@ class ConfigurationFragment @JvmOverloads constructor(
                             popup.menu.removeItem(R.id.action_group_qr)
                             popup.menu.removeItem(R.id.action_group_clipboard)
                         }
+                        
+                        val bean = proxyEntity.requireBean()
 
+                        popup.setOnMenuItemClickListener(this@ConfigurationHolder)
+                        popup.show()
+                    }
+                    
                     if (!(select || proxyEntity.type == ProxyEntity.TYPE_CHAIN)) {
                         val validateResult =
                             if ((parentFragment as? ConfigurationFragment)?.securityAdvisory == true) {
