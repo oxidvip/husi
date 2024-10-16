@@ -88,9 +88,6 @@ import io.nekohasekai.sagernet.ui.profile.ChainSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.DirectSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.HttpSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.HysteriaSettingsActivity
-import io.nekohasekai.sagernet.ui.profile.JuicitySettingsActivity
-import io.nekohasekai.sagernet.ui.profile.MieruSettingsActivity
-import io.nekohasekai.sagernet.ui.profile.NaiveSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.SSHSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.ShadowsocksSettingsActivity
 import io.nekohasekai.sagernet.ui.profile.SocksSettingsActivity
@@ -431,24 +428,12 @@ class ConfigurationFragment @JvmOverloads constructor(
                 startActivity(Intent(requireActivity(), TrojanSettingsActivity::class.java))
             }
 
-            R.id.action_new_mieru -> {
-                startActivity(Intent(requireActivity(), MieruSettingsActivity::class.java))
-            }
-
-            R.id.action_new_naive -> {
-                startActivity(Intent(requireActivity(), NaiveSettingsActivity::class.java))
-            }
-
             R.id.action_new_hysteria -> {
                 startActivity(Intent(requireActivity(), HysteriaSettingsActivity::class.java))
             }
 
             R.id.action_new_tuic -> {
                 startActivity(Intent(requireActivity(), TuicSettingsActivity::class.java))
-            }
-
-            R.id.action_new_juicity -> {
-                startActivity(Intent(requireActivity(), JuicitySettingsActivity::class.java))
             }
 
             R.id.action_new_direct -> {
@@ -1664,17 +1649,6 @@ class ConfigurationFragment @JvmOverloads constructor(
                             popup.menu.removeItem(R.id.action_group_qr)
                             popup.menu.removeItem(R.id.action_group_clipboard)
                         }
-
-                        val bean = proxyEntity.requireBean()
-                        if (proxyEntity.mustUsePlugin()
-                            || (bean as? ConfigBean)?.type == ConfigBean.TYPE_CONFIG
-                        ) {
-                            popup.menu.removeItem(R.id.action_group_outbound)
-                        }
-
-                        popup.setOnMenuItemClickListener(this@ConfigurationHolder)
-                        popup.show()
-                    }
 
                     if (!(select || proxyEntity.type == ProxyEntity.TYPE_CHAIN)) {
                         val validateResult =
