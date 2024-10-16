@@ -84,7 +84,7 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                         .subText(versionName)
                         .setOnClickAction {
                             requireContext().launchCustomTab(
-                                "https://github.com/xchacha20-poly1305/husi/releases"
+                                "https://github.com/oxidvip/husi/releases"
                             )
                         }
                         .build())
@@ -161,7 +161,7 @@ class AboutFragment : ToolbarFragment(R.layout.layout_about) {
                         .text(R.string.github)
                         .setOnClickAction {
                             requireContext().launchCustomTab(
-                                "https://github.com/xchacha20-poly1305/husi"
+                                "https://github.com/oxidvip/husi"
 
                             )
                         }
