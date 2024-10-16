@@ -67,6 +67,8 @@ abstract class GroupUpdater {
         }
         val ipv6First = ipv6Mode >= IPv6Mode.PREFER
 
+        for (profile in profiles) {
+
             if (profile.serverAddress.isIpAddress()) continue
 
             lookupJobs.add(GlobalScope.launch(lookupPool) {
