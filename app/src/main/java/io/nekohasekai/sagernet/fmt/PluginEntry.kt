@@ -9,24 +9,6 @@ enum class PluginEntry(
     val packageName: String, // for f-droid page
     val downloadSource: DownloadSource = DownloadSource()
 ) {
-    MieruProxy(
-        "mieru-plugin",
-        SagerNet.application.getString(R.string.action_mieru),
-        "fr.husi.plugin.mieru",
-        DownloadSource(
-            fdroid = false,
-            downloadLink = "https://github.com/xchacha20-poly1305/husi/releases?q=mieru",
-        ),
-    ),
-    NaiveProxy(
-        "naive-plugin",
-        SagerNet.application.getString(R.string.action_naive),
-        "fr.husi.plugin.naive",
-        DownloadSource(
-            fdroid = false,
-            downloadLink = "https://github.com/xchacha20-poly1305/husi/releases?q=naive",
-        ),
-    ),
     Hysteria(
         "hysteria-plugin",
         SagerNet.application.getString(R.string.action_hysteria),
@@ -42,23 +24,14 @@ enum class PluginEntry(
         "fr.husi.plugin.hysteria2",
         DownloadSource(
             fdroid = false,
-            downloadLink = "https://github.com/xchacha20-poly1305/husi/releases?q=Hysteria2",
-        ),
-    ),
-    Juicity(
-        "juicity-plugin",
-        SagerNet.application.getString(R.string.action_juicity),
-        "fr.husi.plugin.juicity",
-        DownloadSource(
-            fdroid = false,
-            downloadLink = "https://github.com/xchacha20-poly1305/husi/releases?q=juicity",
+            downloadLink = "https://github.com/oxidvip/husi/releases?q=Hysteria2",
         ),
     )
     ;
 
     data class DownloadSource(
         val fdroid: Boolean = true,
-        val downloadLink: String = "https://github.com/xchacha20-poly1305/husi/releases",
+        val downloadLink: String = "https://github.com/oxidvip/husi/releases",
     )
 
     companion object {
