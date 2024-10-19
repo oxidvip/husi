@@ -1,3 +1,0 @@
-[submodule "plugin/hysteria2/src/main/go/hysteria2"]
-	path = plugin/hysteria2/src/main/go/hysteria2
-	url = https://github.com/apernet/hysteria.git
