@@ -20,6 +20,3 @@ go.work*
 *.tgz
 *.tar.*
 *.tar
-
-# submodules
-/external
