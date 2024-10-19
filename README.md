@@ -77,15 +77,6 @@ make apk
 
 The APK file will be located in `app/build/outputs/apk`.
 
-#### 🌈 Plugins
-
-```shell
-make plugin PLUGIN=<Plugin name>
-```
-
-Plugin name list:
-
-* `hysteria2`
 
 ## 📖 License
 
