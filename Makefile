@@ -35,8 +35,5 @@ fmt_go_install:
 test_go:
 	cd libcore/ && go test -v -count=1 ./...
 
-plugin:
-	./gradlew :plugin:$(PLUGIN):assembleFossRelease
-
 generate_option:
 	cd ./libcore/cmd/boxoption && go run . | xclip -selection clipboard
