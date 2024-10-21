@@ -270,32 +270,6 @@
         <item>httpupgrade</item>
     </string-array>
 
-    <string-array name="trojan_go_networks_entry">
-        <item>NONE</item>
-        <item>WEBSOCKET</item>
-    </string-array>
-
-    <string-array name="trojan_go_networks_value">
-        <item>none</item>
-        <item>ws</item>
-    </string-array>
-
-    <string-array name="trojan_go_security_entry">
-        <item>NONE</item>
-        <item>SHADOWSOCKS</item>
-    </string-array>
-
-    <string-array name="trojan_go_security_value">
-        <item>none</item>
-        <item>ss</item>
-    </string-array>
-
-    <string-array name="trojan_go_methods">
-        <item>AES-128-GCM</item>
-        <item>AES-256-GCM</item>
-        <item>CHACHA20-IETF-POLY1305</item>
-    </string-array>
-
     <string-array name="vmess_encryption_value">
         <item>chacha20-poly1305</item>
         <item>aes-128-gcm</item>
@@ -323,21 +297,6 @@
         <item>1000</item>
         <item>3000</item>
         <item>10000</item>
-    </string-array>
-
-    <string-array name="mieru_protocol">
-        <item>TCP</item>
-        <item>UDP</item>
-    </string-array>
-
-    <string-array name="naive_proto_entry">
-        <item>HTTPS</item>
-        <item>QUIC</item>
-    </string-array>
-
-    <string-array name="naive_proto_value">
-        <item>https</item>
-        <item>quic</item>
     </string-array>
 
     <string-array name="night_mode">
@@ -381,7 +340,6 @@
     </string-array>
 
     <string-array name="hysteria_auth_type">
-        <item>@string/plugin_disabled</item>
         <item>STRING</item>
         <item>BASE64</item>
     </string-array>
@@ -522,7 +480,6 @@
 
     <string-array name="plugin_providers">
         <item>sing-box</item>
-        <item>@string/plugin</item>
     </string-array>
 
     <string-array name="ntp_intervals">
