@@ -93,12 +93,6 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/protocol"
                                 android:textAppearance="?attr/textAppearanceSubtitle2" />
-
-                        <Spinner
-                                android:id="@+id/pin_cert_protocol"
-                                android:layout_width="match_parent"
-                                android:entries="@array/naive_proto_entry"
-                                android:layout_height="wrap_content" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
