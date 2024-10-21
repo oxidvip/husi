@@ -80,8 +80,6 @@ public class SingBoxOptions {
 
         // Generate note: option type:  public TrojanInboundOptions TrojanOptions;
 
-        // Generate note: option type:  public NaiveInboundOptions NaiveOptions;
-
         // Generate note: option type:  public HysteriaInboundOptions HysteriaOptions;
 
         // Generate note: option type:  public ShadowTLSInboundOptions ShadowTLSOptions;
