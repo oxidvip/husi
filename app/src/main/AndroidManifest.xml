@@ -44,12 +44,6 @@
         android:name="android.hardware.camera.autofocus"
         android:required="false" />
 
-    <queries>
-        <intent>
-            <action android:name="io.nekohasekai.sagernet.plugin.ACTION_NATIVE_PLUGIN" />
-        </intent>
-    </queries>
-
     <application
         android:name="io.nekohasekai.sagernet.SagerNet"
         android:allowBackup="true"
@@ -133,9 +127,6 @@
                 <data android:scheme="sock5" />
                 <data android:scheme="vmess" />
                 <data android:scheme="trojan" />
-                <data android:scheme="trojan-go" />
-                <data android:scheme="naive+https" />
-                <data android:scheme="naive+quic" />
                 <data android:scheme="hysteria" />
 
             </intent-filter>
@@ -167,12 +158,6 @@
             android:name="io.nekohasekai.sagernet.ui.profile.TrojanSettingsActivity"
             android:configChanges="uiMode" />
         <activity
-            android:name="io.nekohasekai.sagernet.ui.profile.MieruSettingsActivity"
-            android:configChanges="uiMode" />
-        <activity
-            android:name="io.nekohasekai.sagernet.ui.profile.NaiveSettingsActivity"
-            android:configChanges="uiMode" />
-        <activity
             android:name="io.nekohasekai.sagernet.ui.profile.HysteriaSettingsActivity"
             android:configChanges="uiMode" />
         <activity
@@ -183,9 +168,6 @@
             android:configChanges="uiMode" />
         <activity
             android:name="io.nekohasekai.sagernet.ui.profile.TuicSettingsActivity"
-            android:configChanges="uiMode" />
-        <activity
-            android:name="io.nekohasekai.sagernet.ui.profile.JuicitySettingsActivity"
             android:configChanges="uiMode" />
         <activity
             android:name="io.nekohasekai.sagernet.ui.profile.DirectSettingsActivity"
